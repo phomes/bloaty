@@ -1425,7 +1425,7 @@ bool Bloaty::ScanAndRollupFile(const InputFile& file, Rollup* rollup) {
       PrintMaps(vm_maps_, filename, filename_position);
     }
 
-    std::string KeysToString(const std::vector<std::string>& keys) {
+    static std::string KeysToString(const std::vector<std::string>& keys) {
       std::string ret;
 
       for (size_t i = 0; i < keys.size(); i++) {
@@ -1438,7 +1438,7 @@ bool Bloaty::ScanAndRollupFile(const InputFile& file, Rollup* rollup) {
       return ret;
     }
 
-    void PrintMapRow(StringPiece str, uint64_t start, uint64_t end) {
+    static void PrintMapRow(StringPiece str, uint64_t start, uint64_t end) {
       printf("[%" PRIx64 ", %" PRIx64 "] %.*s\n", start, end, (int)str.size(),
              str.data());
     }
