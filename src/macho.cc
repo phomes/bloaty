@@ -172,8 +172,6 @@ static bool ParseMachOSections(RangeSink* sink) {
         size = val;
       } else if (key == "offset") {
         offset = val;
-      } else if (key == "size") {
-        size = val;
       } else if (key == "flags") {
         size_t filesize = size;
         if (val & 0x1) {
